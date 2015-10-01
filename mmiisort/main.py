@@ -1,5 +1,4 @@
 from isort import SortImports
-import itertools
 import mothermayi.colors
 import mothermayi.errors
 
@@ -19,7 +18,7 @@ def get_status(had_changes):
 def pre_commit(config, staged):
     changes = [do_sort(filename) for filename in staged]
     messages = [get_status(had_change) for had_change in changes]
-    lines = ["  {0:<30} ... {1:<10}".format(filename, message) for filename, message in itertools.izip(staged, messages)]
+    lines = ["  {0:<30} ... {1:<10}".format(filename, message) for filename, message in zip(staged, messages)]
     result = "\n".join(lines)
     if any(changes):
         raise mothermayi.errors.FailHook(result)
