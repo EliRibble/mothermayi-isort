@@ -101,6 +101,7 @@ def main():
         },
         install_requires    = [
             'isort==4.2.2',
+            'mothermayi>=0.4',
         ],
         extras_require={
         },
