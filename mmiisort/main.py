@@ -11,7 +11,7 @@ def plugin():
 
 def do_sort(filename):
     results = SortImports(filename)
-    return results.in_lines != results.out_lines
+    return getattr(results, 'in_lines', None) and results.in_lines != results.out_lines
 
 def get_status(had_changes):
     return mothermayi.colors.red('unsorted') if had_changes else mothermayi.colors.green('sorted')
