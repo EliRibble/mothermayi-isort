@@ -100,7 +100,7 @@ def main():
             'sdist'         : CustomSDistCommand,
         },
         install_requires    = [
-            'isort==4.2.2',
+f           'isort>=4.2.5',
             'mothermayi>=0.4',
         ],
         extras_require={
